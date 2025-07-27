@@ -9,11 +9,12 @@ import adminRoutes from "./routes/adminRoutes.js";
 dotenv.config();
 
 const app = express();
-app.use(cors({
-  origin: ["https://feedback-system-hackathon-wwh9.vercel.app"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: process.env.ORIGIN,
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use("/api/feedback", feedbackRoutes);
