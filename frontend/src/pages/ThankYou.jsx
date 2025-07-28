@@ -1,12 +1,3 @@
-// const ThankYou = () => (
-//   <div className="text-center mt-20">
-//     <h1 className="text-3xl font-bold">Thank you for your feedback!</h1>
-//   </div>
-// );
-
-// export default ThankYou;
-
-
 import { Link } from "react-router-dom";
 
 const ThankYou = () => {

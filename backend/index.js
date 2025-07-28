@@ -11,13 +11,6 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-// app.use(
-//   // cors({
-//   //   origin: process.env.ORIGIN,
-//   //   credentials: true,
-//   // })
-//   );
-
   app.use(cors({
     origin:[
       "http://localhost:5173",
@@ -30,7 +23,7 @@ app.use(express.json());
 
 
 app.use("/api/feedback", feedbackRoutes);
-app.use("/api/admin", adminRoutes);
+app.use("/api/admin", adminRoutes); //username:admin  password:admin123
 
 app.get("/", (req, res) => {
   res.send("✅ Student Feedback API is running");

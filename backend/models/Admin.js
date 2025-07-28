@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
 const adminSchema = new mongoose.Schema({
-  username: String,
-  password: String, // hashed
+  username: String, //admin
+  password: String, // admin123
 });
 
 export default mongoose.model("Admin", adminSchema);
