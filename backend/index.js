@@ -11,12 +11,22 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: process.env.ORIGIN,
-    credentials: true,
-  })
-);
+// app.use(
+//   // cors({
+//   //   origin: process.env.ORIGIN,
+//   //   credentials: true,
+//   // })
+//   );
+
+  app.use(cors({
+    origin:[
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "https://feedback-system-hackathon-wwh9.vercel.app"
+    ]
+
+  }))
+
 
 
 app.use("/api/feedback", feedbackRoutes);
