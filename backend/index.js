@@ -9,13 +9,15 @@ import adminRoutes from "./routes/adminRoutes.js";
 dotenv.config();
 
 const app = express();
+app.use(express.json());
+
 app.use(
   cors({
     origin: process.env.ORIGIN,
     credentials: true,
   })
 );
-app.use(express.json());
+
 
 app.use("/api/feedback", feedbackRoutes);
 app.use("/api/admin", adminRoutes);
